@@ -222,13 +222,11 @@ body {
     position: relative;
     z-index: 2;
     background: transparent;
-    /* Biarkan transparan agar ornamen terlihat */
 }
 
 /* BACKGROUND ORNAMEN */
 #info, #story, #acara, #galeri, #rsvp, #gifts {
     background: linear-gradient(135deg, #fef9ef, #f5f7f2);
-    /* Tetap ada gradien */
     position: relative;
 }
 
@@ -603,7 +601,7 @@ body {
 /* FLIP CARD */
 .couple-card {
     width: 320px;
-    height: 420px;
+    height: 460px;
     perspective: 1500px;
     cursor: pointer;
 }
@@ -721,27 +719,62 @@ body {
     object-position: 50% 10%;
 }
 
-.rsvp-loading {
-    text-align: center;
-}
-
-.footer-instagram-link {
-    color: #d4a373;
-    margin-left: 8px;
-}
-
 .card-front h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.6rem;
     color: #2c5e2a;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .card-subtitle {
     color: #c9a96e;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     letter-spacing: 2px;
+    margin-bottom: 15px;
 }
+
+/* ========== TAMBAHAN: PARENT FRONT CARD ========== */
+.parent-front {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(201, 169, 110, 0.3);
+    text-align: center;
+}
+
+.parent-front i {
+    font-size: 0.75rem;
+    color: #c9a96e;
+    margin-bottom: 5px;
+    display: inline-block;
+    animation: pulseIcon 2s infinite;
+}
+
+@keyframes pulseIcon {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.parent-name {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: #a7c78b;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.parent-name-detail {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #2c5e2a;
+    line-height: 1.4;
+}
+
+/* ========== END TAMBAHAN ========== */
 
 .card-back {
     background: linear-gradient(135deg, #c9a96e, #b8925a);
@@ -758,16 +791,6 @@ body {
     font-size: 3rem;
     margin-bottom: 25px;
     animation: pulseIcon 2s infinite;
-}
-
-@keyframes pulseIcon {
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
 }
 
 .card-back h4 {
@@ -832,6 +855,19 @@ body {
 
     .mobile-love .animated-love {
         font-size: 2rem;
+    }
+    
+    .couple-card {
+        height: 440px;
+    }
+    
+    .parent-front {
+        margin-top: 10px;
+        padding-top: 8px;
+    }
+    
+    .parent-name-detail {
+        font-size: 0.7rem;
     }
 }
 
@@ -1117,46 +1153,6 @@ body {
     font-size: 1rem;
     z-index: 2;
     position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blink-caret {
-    from, to {
-        border-color: transparent;
-    }
-
-    50% {
-        border-color: #c9a96e;
-    }
-}
-
-@media (max-width: 768px) {
-    .galeri-quote {
-        white-space: normal;
-        animation: fadeIn 1s ease;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
 }
 
 .gallery-grid {
@@ -1629,18 +1625,6 @@ body {
     transform: scale(0.95);
 }
 
-/* Petals Container */
-/*.petals-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 999;
-  overflow: hidden;
-}
-
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     .nav-menu {
@@ -1679,7 +1663,7 @@ body {
 
     .couple-card {
         width: 280px;
-        height: 380px;
+        height: 420px;
     }
 
     .card-front .portrait-frame {
